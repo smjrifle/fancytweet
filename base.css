@@ -1,0 +1,11 @@
+#auth{
+    float:right;
+}
+
+.valid{
+    color: green;
+}
+
+.invalid{
+    color: red;
+}

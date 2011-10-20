@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function checkCheckbox(ele){
+                boxes = getElementsByClass('service');
+                //console.log(boxes);
+                var f=0;
+                for(var i=0; i<boxes.length; i++){
+                    if(boxes[i].checked) f=1;
+                }
+                if (f==0) ele.checked=true;
+            }
+            
+            function getElementsByClass(className,tagName){
+                //if tagName is not passed, process all the tags
+                tagName = typeof(tagName) != 'undefined' ? tagName : '*';
+                //create result array
+                var result=new Array();
+                //create a counter
+                var c=0;
+                //get required tags
+                var tags=document.getElementsByTagName(tagName);
+                //iterate through each tag
+                for (var i = 0; i < tags.length; i++) {
+                    //splitting to check tags with multiple classes
+                    var classes = tags[i].className.split(' ');
+                    //iterate through each class and check
+                    for (var j=0;j<classes.length;j++){
+                        if (classes[j] == className)   {
+                            //save it and increase the counter
+                            result[c++]=tags[i];
+                        }
+                    }
+                }
+                //return the array
+                return result;
+            }
+        
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <input class="service" type="checkbox" name="service" value="twitpic" onclick="checkCheckbox(this)">TwitPic
+            <input class="service" type="checkbox" name="service" value="yfrog" onclick="checkCheckbox(this)">yfrog
+            <input class="service" type="checkbox" name="service" value="twittermedia" onclick="checkCheckbox(this)">TwitterMedia
+            <input type="submit">
+        </form>
+    </body>
+</html>
