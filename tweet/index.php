@@ -1,7 +1,5 @@
-<?php
-session_start();
-?>
-<htmL>
+<?php ini_set('session.gc_maxlifetime', '9999999');ini_set('session.cookie_lifetime', '9999999');session_name('ft');session_start();?>
+<html>
     <head>
         <title>Simple Tweet</title>
     </head>
@@ -35,3 +33,4 @@ session_start();
                     require_once 'post_user.php';
                 }
                 ?>
+        <a href="/">FancyTweet</a>

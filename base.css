@@ -9,3 +9,38 @@
 .invalid{
     color: red;
 }
+
+#footer{
+    clear: both;
+    margin:auto;
+    text-align: center;
+}
+
+#sidebar{
+    clear: both;
+    float:left;
+    border-right:1px solid;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width:10%
+}
+
+#content{
+    float:left;
+    border-left:1px solid;
+    padding-left:10px;
+    padding-bottom: 10px;
+}
+
+#main{
+
+}
+
+#pages{
+    list-style-type: none;
+    padding: 0px;
+}
+
+#pages li{
+        padding-bottom: 10px;
+}

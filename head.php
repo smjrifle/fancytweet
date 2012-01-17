@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php ini_set('session.gc_maxlifetime', '9999999');ini_set('session.cookie_lifetime', '9999999');session_name('ft');session_start();?>
 <htmL>
     <head>
 <?php

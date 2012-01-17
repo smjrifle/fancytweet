@@ -1,5 +1,6 @@
 <?php
 
+session_name('ft');
 session_start();
 require_once 'config.php';
 require_once 'twitteroauth.php';
@@ -21,7 +22,6 @@ if (isset($_GET['oauth_token']) || (isset($_COOKIE['oauth_token']) && isset($_CO
         //echo "You signed in with twitter!";
         $_SESSION['user_id'] = $params['user_id'];
         $r = $myDB->fetchRows("SELECT * FROM auth WHERE user_id=" . $params['user_id']);
-
         if (count($r) == 0) { //store the user info as it doesn't exist already
             $sql = "INSERT INTO auth VALUES('','" . $params['user_id'] . "','" . $params['screen_name'] . "','" . "','" . $params['oauth_token'] . "','" . $params['oauth_token_secret'] . "','')";
             $myDB->query($sql);

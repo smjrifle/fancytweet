@@ -1,11 +1,11 @@
 <div id="header">
-    <div id="banner"><strong>FancyTweet</strong>
+    <div id="banner"><a href="/"><strong>FancyTweet</strong></a>
     </div>
     <div id="auth">
         <?php
         if (isset($user)){
             echo "Signed in as @".$user->user_name;
-            if (!($user->password)) echo '<br/><a href="'.$base.'/create/">Create Twitterax Login!</a>';
+            if (!($user->password)) echo '<br/><a href="'.$base.'/create/">Create FancyTweet Login!</a>';
             echo '<br/><a href="'.$base.'/logout/">Sign Out!</a>';
         }
         else{

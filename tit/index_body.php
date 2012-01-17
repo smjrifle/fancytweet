@@ -312,7 +312,7 @@
                 <input type="radio" id="radio_file" title="Upload Image file!" onclick="enableFile();" name="radio_file">
                 <label for="radio_file">File : </label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                <input id="file" type="file" name="upload" onfocus="enableFile();" size="50"/><br /><br />
+                <input id="file" type="file" name="upload[]" onfocus="enableFile();" size="50" multiple/><br /><br />
                 Caption : <input type="text" name="message" size="50" value="<?php echo $gt; ?>"/><br /><br />
                 <input type="checkbox" name="tweet" value="tweet" checked> Tweet
                 <input type="submit" name="submit" value="GO!" />
@@ -322,12 +322,10 @@
             echo "You are not signed in via Twitter. Sign in with twitter first to start TwitPiccing from URL!";
             //if url is passed as GET, save it on session
             if (isset($_GET['url'])) {
-
                 $_SESSION['gu'] = $_GET['url'];
                 $_SESSION['gt'] = $_GET['title'];
             }
         }
         ?>
     </div>
-
 </body>

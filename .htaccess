@@ -6,13 +6,6 @@ AddType application/x-httpd-php53 .php
 ExpiresActive On
 ExpiresDefault A0
 
-# Set up caching on media files for 1 year (forever?)
-<FilesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav)$">
-ExpiresDefault A29030400
-Header append Cache-Control "public"
-</FilesMatch>
-
-
 AddOutputFilterByType DEFLATE text/plain
 AddOutputFilterByType DEFLATE text/html
 AddOutputFilterByType DEFLATE text/xml
@@ -22,11 +15,6 @@ AddOutputFilterByType DEFLATE application/xhtml+xml
 AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
-
-# Or, compress certain file types by extension:
-<Files *.html>
-SetOutputFilter DEFLATE
-</Files>
 
 <IfModule mod_expires.c>
     ExpiresActive On

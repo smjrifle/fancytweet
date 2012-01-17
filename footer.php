@@ -2,5 +2,5 @@
 <hr/>
 <br/>
 
-COPYLEFT (ↄ) FancyTweet -  All rights REVERSED!
+COPYLEFT (ↄ) FancyTweet 2012 -  All rights REVERSED!
 </div>
