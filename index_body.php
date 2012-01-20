@@ -4,10 +4,8 @@
 
 <body>
     <?php require_once 'header.php'; ?>
-
-    <div id="main">
         <?php require_once 'sidebar.php'; ?>
-        <div id="content">
+        <div id="main">
             <h1>FancyTweet Projects:</h1>
 
             <h4><a href="tit">Twitter Image Transloader</a></h4>
@@ -21,5 +19,4 @@
 </p>
 
         </div>
-    </div>
 </body>

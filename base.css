@@ -25,15 +25,11 @@
     width:10%
 }
 
-#content{
+#main{
     float:left;
     border-left:1px solid;
     padding-left:10px;
     padding-bottom: 10px;
-}
-
-#main{
-
 }
 
 #pages{
