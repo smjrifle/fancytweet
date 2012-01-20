@@ -10,9 +10,9 @@
         <div id="content">
             <h1>FancyTweet Projects:</h1>
 
-            <h2><a href="tit">Twitter Image Transloader</a> 
+            <h4><a href="tit">Twitter Image Transloader</a></h4>
 
-                <h2><a href="tweet">Simple Tweet : The most lightweight and cheapest tweeting client</a></h2>
+                <h4><a href="tweet">Simple Tweet : The most lightweight tweeting client</a></h4>
                 <br><br>
                 <p>
 
@@ -22,10 +22,4 @@
 
         </div>
     </div>
-
-
-
-
-
-
 </body>
