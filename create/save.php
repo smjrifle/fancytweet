@@ -1,4 +1,4 @@
-<?php session_start();
+<?php ini_set('session.gc_maxlifetime', '9999999');ini_set('session.cookie_lifetime', '9999999');session_name('ft');session_start();
 if (isset($_POST)){
         require_once '../config.php';
         require_once '../database.php';
@@ -11,8 +11,7 @@ $myDB->connect();
             session_regenerate_id();
             $r=$myDB->query("UPDATE auth SET password='".md5($_POST['pass'])."', email='".$_POST['email']."' WHERE user_id=".$_SESSION['user_id']);
             if($r){
-                echo "<br/>Your FancyTweet account has been created for your Twitter Account! You can now use your username and the password you set to  ..";
-                
+                echo "<br/>Your FancyTweet account has been created for your Twitter Account! You can now use your username and the password you set to.";
             }
         }
 }

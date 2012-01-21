@@ -28,8 +28,12 @@ if (isset($_GET['oauth_token']) || (isset($_COOKIE['oauth_token']) && isset($_CO
             $_SESSION['reg'] = 0;
         } else if (isset($r[0]->password)) {//if the user exists and password too
             $_SESSION['reg'] = 1;
+            $sql = "UPDATE auth SET user_name='".$params['screen_name']."', oauth_token='".$params['oauth_token']."', oauth_token_secret='".$params['oauth_token_secret']."';";
+            $myDB->query($sql);
         } else { //otherwise the user has previously logged in but not created fancytweet login
             $_SESSION['reg'] = 0;
+            $sql = "UPDATE auth SET user_name='".$params['screen_name']."', oauth_token='".$params['oauth_token']."', oauth_token_secret='".$params['oauth_token_secret']."';";
+            $myDB->query($sql);
         }
         //header("Location: ".$_SESSION['stage']);
         echo "<script>window.location=\"" . $_SESSION['stage'] . "\"</script>";
