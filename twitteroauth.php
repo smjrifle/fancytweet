@@ -180,20 +180,12 @@ class TwitterOAuth {
       $url = "{$this->host}{$url}.{$this->format}";
     }
     $request = OAuthRequest::from_consumer_and_token($this->consumer, $this->token, $method, $url, $parameters);
-//    var_dump($request->get_normalized_http_url());
-//    var_dump($request->to_postdata());
     $request->sign_request($this->sha1_method, $this->consumer, $this->token);
     switch ($method) {
     case 'GET':
       return $this->http($request->to_url(), 'GET');
     default:
-//      var_dump($this->http($request->get_normalized_http_url(), $method, $request->to_postdata()));
-//        echo "<br>";
-//        echo "<br>";
-//        var_dump($this->http_info);
-//        echo "<br>";
-//        echo "<br>";
-        return $this->http_code;
+      return $this->http($request->get_normalized_http_url(), $method, $request->to_postdata());
     }
   }
 

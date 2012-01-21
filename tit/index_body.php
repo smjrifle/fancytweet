@@ -155,7 +155,7 @@
 
          */
         if (isset($response->url)) {
-            echo '<br><b>Uploaded to TwitPic by <a href="http://twitter.com/' . $response->user->screen_name . '">@' . $response->user->screen_name . '</a></b><br>';
+            echo '<br><b>Uploaded to TwitPic by <a href="http://twitter.com/' . $response->user->screen_name . '" target="_blank">@' . $response->user->screen_name . '</a></b><br>';
             echo "TwitPic URL : " . linkify($response->url) . "<br/>";
             echo "Caption : " . $response->text . "<br/>";
             echo "Uploaded on : " . substr($response->timestamp, 0, 17) . "<br>";
@@ -313,7 +313,7 @@
                 <input type="radio" id="radio_file" title="Upload Image file!" onclick="enableFile();" name="radio_file">
                 <label for="radio_file">File : </label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-                <input id="file" type="file" name="upload[]" onfocus="enableFile();" size="50" multiple/><br /><br />
+                <input id="file" type="file" name="upload" onfocus="enableFile();" size="50"/><br /><br />
                 Caption : <input type="text" name="message" size="50" value="<?php echo $gt; ?>"/><br /><br />
                 <input type="checkbox" name="tweet" value="tweet" checked> Tweet
                 <input type="submit" name="submit" value="GO!" />
