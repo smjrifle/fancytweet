@@ -36,7 +36,7 @@ if (isset($_GET['oauth_token']) || (isset($_COOKIE['oauth_token']) && isset($_CO
             $myDB->query($sql);
         }
         //header("Location: ".$_SESSION['stage']);
-        echo "<script>window.location=\"" . $_SESSION['stage'] . "\"</script>";
+            echo "<script>window.location=\"" . $_SESSION['stage'] . "\"</script>";
     } else {
         echo "Sign In Failed!";
     }
