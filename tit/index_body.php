@@ -157,7 +157,7 @@
         if (isset($response->url)) {
             echo '<br><b>Uploaded to TwitPic by <a href="http://twitter.com/' . $response->user->screen_name . '" target="_blank">@' . $response->user->screen_name . '</a></b><br>';
             echo "TwitPic URL : " . linkify($response->url) . "<br/>";
-            echo "Caption : " . $response->text . "<br/>";
+            echo "Caption : " . html_entity_decode($response->text) . "<br/>";
             echo "Uploaded on : " . substr($response->timestamp, 0, 17) . "<br>";
             echo "Dimensions : " . $response->width . " x " . $response->height;
         } else {
