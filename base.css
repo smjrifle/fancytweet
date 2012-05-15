@@ -39,3 +39,9 @@
 #pages li{
         padding-bottom: 10px;
 }
+
+.trans_link{
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}

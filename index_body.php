@@ -17,7 +17,7 @@
                 $auth = new TwitterOAuth($config['key'], $config['secret'], $user->oauth_token, $user->oauth_token_secret);
                 $r = $auth->post('statuses/update', array('status' => html_entity_decode($_POST['outputText'], ENT_NOQUOTES, 'UTF-8')));
                 if (isset($r->error))
-                    echo "<div style='color:red'>Error: " . $r->error."</div>";
+                    echo "<div style='color:red'>Error: " . $r->error . "</div>";
                 else
                     echo "<div style='color:green'>Status Updated!</div>";
             } else {
@@ -26,6 +26,7 @@
 //print_r($auth);
         }
         ?>
+
         <form name="inputForm" onkeyup="transformText();" action="/" method="POST">
             <br>
             <font color="#006699" face="Verdana, Geneva, sans-serif">Input<span id="inputCount" style=""></span>:</font>
@@ -33,6 +34,11 @@
             <br>
             <textarea cols="55" id="input" rows="6" name="inputText"></textarea>
             <!--The transformation options begin here-->
+            <div class="options">
+                <input name="layer1" id="nothing" onclick="transformText();" title="Tweet what you typed!" type="radio"><label for="nothing">Do nothing</label>
+                <input name="layer1" id="nepali" onclick="transformText();" title="Type in Nepali!" type="checkbox"><label for="nepali"><a class ="trans_link" href='javascript:(t13nb=window.t13nb||function(l){var%20t=t13nb,d=document,o=d.body,c="createElement",a="appendChild",w="clientWidth",i=d[c]("span"),s=i.style,x=o[a](d[c]("script"));if(o){if(!t.l){t.l=x.id="t13ns";o[a](i).id="t13n";i.innerHTML="Loading%20Transliteration";s.cssText="z-index:99;font-size:18px;background:#FFF1A8;top:0";s.position=d.all?"absolute":"fixed";s.left=((o[w]-i[w])/2)+"px";x.src="http://t13n.googlecode.com/svn/trunk/blet/rt13n.js?l="+l}}else%20setTimeout(t,500)})("ne");$("input").focus();toggleCheckBox("nepali");'>Type in Nepali</a></label>
+
+            </div>
             <!--The first set of options is for translations-->
             <div class="options">
                 <input name="layer1" id="piratify" onclick="transformText();" title="Translate into Pirate language!" type="radio"><label for="piratify">Piratify!</label>
@@ -40,7 +46,8 @@
                 <input name="layer1" id="shrink" onclick="transformText();" title="Shrink words!" type="radio"><label for="shrink">Shrink!</label>
             </div>
             <!--The second set of options is for flipping-->
-            <div class="options"><input name="layer1" id="flip" onclick="transformText();" title="Flip characters in text!" type="radio" checked><label for="flip"> Flip :</label>
+            <div class="options">
+                <input name="layer1" id="flip" onclick="transformText();" title="Flip characters in text!" type="radio" checked><label for="flip"> Flip :</label>
                 <input name="layer2" id="down" onclick="transformText();" title="Turn letters upside-down!" type="checkbox" checked><label for="down">Upside-Down</label>
                 <input name="layer2" id="back" onclick="transformText();" title="Revert text backwards!" type="checkbox" checked><label for="back">Revert Backwards</label>
             </div>
