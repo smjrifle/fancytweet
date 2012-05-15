@@ -15,7 +15,7 @@
                 require_once 'database.php';
                 $user = $myDB->fetchFirstRow("SELECT * FROM auth WHERE user_id=" . $_SESSION['user_id'] . "");
                 $auth = new TwitterOAuth($config['key'], $config['secret'], $user->oauth_token, $user->oauth_token_secret);
-                $r = $auth->post('statuses/update', array('status' => $_POST['outputText']));
+                $r = $auth->post('statuses/update', array('status' => html_entity_decode($_POST['outputText'], ENT_NOQUOTES, 'UTF-8')));
                 if (isset($r->error))
                     echo "Error: " . $r->error;
                 else

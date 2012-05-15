@@ -9,20 +9,20 @@ class Yfrog {
         $this->auth = $auth;
     }
 
-    function upload($message, $file, $tweet= TRUE) {
+    function upload($message, $file, $tweet = TRUE) {
         $post = array
             (
             'media' => '@' . $file, // filename
-            'message' => ' '.$message
+            'message' => ' ' . $message
         );
         return $this->processPost($post, $tweet);
     }
 
-    function shareLink($message, $link, $tweet= TRUE) {
+    function shareLink($message, $link, $tweet = TRUE) {
         $post = array
             (
             'url' => $link, // url
-            'message' => ' '.$message
+            'message' => ' ' . $message
         );
         return $this->processPost($post, $tweet);
     }
@@ -86,22 +86,22 @@ class Yfrog {
             $response = simplexml_load_string($response);
             if (isset($response->mediaid)) {
                 if ($tweet) {
-                    //$this->auth->post('statuses/update', array('status' => $post['message'] . ' ' . $response->mediaurl));
+                    //$this->auth->post('statuses/update', array('status' => html_entity_decode($post['message'], ENT_NOQUOTES, 'UTF-8') . ' ' . $response->mediaurl));
                 }
-            } else if(isset($response->err['code'])){
+            } else if (isset($response->err['code'])) {
                 $err->code = $response->err['code'];
                 $err->message = $response->err['msg'];
                 return $err;
-            }
-            else{
-                $err->code=0;
+            } else {
+                $err->code = 0;
                 $err->message = "Yfrong is drunk. Try again later.";
                 return $err;
             }
         } else {
-            $err->code=$response_info['http_code'];
+            $err->code = $response_info['http_code'];
             $err->message = $response;
-            if ($response=='') $err->message = "Yfrong is drunk. Please try again later.";
+            if ($response == '')
+                $err->message = "Yfrong is drunk. Please try again later.";
             return $err;
         }
         return $response;

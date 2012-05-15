@@ -80,7 +80,7 @@ class Twitpic {
                 //$id = $result->id;
                 //the status pattern
                 $status = $result->text . ' ' . $result->url;
-                //$this->auth->post('statuses/update', array('status' => $status));
+                //$this->auth->post('statuses/update', array('status' => html_entity_decode($_status, ENT_NOQUOTES, 'UTF-8')));
             }
         } else {
 

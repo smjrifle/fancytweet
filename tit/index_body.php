@@ -291,7 +291,7 @@
                 }
 
                 if (isset($_POST['tweet'])) {
-                    $r = $auth->post('statuses/update', array('status' => $message . ' ' . $url));
+                    $r = $auth->post('statuses/update', array('status' => html_entity_decode($message, ENT_NOQUOTES, 'UTF-8') . ' ' . $url));
                     if (isset($r->error))
                         echo "Error: " . $r->error;
                     else
