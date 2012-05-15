@@ -58,7 +58,7 @@ class Twitpic {
         //TwitPic requires the data to be sent as POST
         $media_data = array(
             'media' => '@' . $file,
-            'message' => ' ' . $message, //A space is needed because twitpic b0rks if first char is an @
+            'message' => ' ' . html_entity_decode($message, ENT_NOQUOTES, 'UTF-8'), //A space is needed because twitpic b0rks if first char is an @
             'key' => 'fa2fdecae1770800f98a923ac7526e97'
         );
 

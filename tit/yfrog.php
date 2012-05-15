@@ -13,7 +13,7 @@ class Yfrog {
         $post = array
             (
             'media' => '@' . $file, // filename
-            'message' => ' ' . $message
+            'message' => ' ' . html_entity_decode($message, ENT_NOQUOTES, 'UTF-8')
         );
         return $this->processPost($post, $tweet);
     }
@@ -22,7 +22,7 @@ class Yfrog {
         $post = array
             (
             'url' => $link, // url
-            'message' => ' ' . $message
+            'message' => ' ' . html_entity_decode($message, ENT_NOQUOTES, 'UTF-8')
         );
         return $this->processPost($post, $tweet);
     }
