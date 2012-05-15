@@ -575,7 +575,7 @@ function revertText(str) { //returns string reverting them
 function flipText(str) { //return text with flipped characters
 	//create the replacement array for inverted characters
 	var r = {
-		'\u0021': '\u00A1',
+		'\u0021': 'i',
 		'\u0022': '\u201E',
 		'\u0026': '\u214B',
 		'\u0027': '\u002C',
@@ -587,7 +587,7 @@ function flipText(str) { //return text with flipped characters
 		'\u0037': '\u2C62',
 		'\u003B': '\u061B',
 		'\u003C': '\u003E',
-		'\u003F': '\u00BF',
+		'\u003F': '?',
 		'\u0041': '\u2200',
 		'\u0042': '8',//B->8
 		'\u0043': '\u2183',
@@ -617,7 +617,6 @@ function flipText(str) { //return text with flipped characters
 		'\u0066': '\u025F',
 		'\u0067': '\u0183',
 		'\u0068': '\u0265',
-		'i': '\u0131',
 		'\u006A': '\u027E',
 		'\u006B': '\u029E',
 		'\u006C': '\u05DF',

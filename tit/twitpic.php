@@ -1,15 +1,15 @@
 <?php
 
 class Twitpic {
-    
+
     //twitteroauth
     private $auth;
-    
+
     function __construct($auth) {
-        $this->auth=$auth;
+        $this->auth = $auth;
     }
-    
-       function upload($message, $file, $tweet= TRUE) {
+
+    function upload($message, $file, $tweet = TRUE) {
         //Has the user submitted an image and message?
 
         $twitpicURL = 'http://api.twitpic.com/2/upload.json';
@@ -57,7 +57,7 @@ class Twitpic {
 
         //TwitPic requires the data to be sent as POST
         $media_data = array(
-            'media' => '@'.$file,
+            'media' => '@' . $file,
             'message' => ' ' . $message, //A space is needed because twitpic b0rks if first char is an @
             'key' => 'fa2fdecae1770800f98a923ac7526e97'
         );
@@ -108,8 +108,6 @@ class Twitpic {
         return $result;
     }
 
- 
-    
 }
 
 ?>

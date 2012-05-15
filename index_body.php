@@ -17,9 +17,9 @@
                 $auth = new TwitterOAuth($config['key'], $config['secret'], $user->oauth_token, $user->oauth_token_secret);
                 $r = $auth->post('statuses/update', array('status' => html_entity_decode($_POST['outputText'], ENT_NOQUOTES, 'UTF-8')));
                 if (isset($r->error))
-                    echo "Error: " . $r->error;
+                    echo "<div style='color:red'>Error: " . $r->error."</div>";
                 else
-                    echo "Status Updated!";
+                    echo "<div style='color:green'>Status Updated!</div>";
             } else {
                 echo 'You need to <a href="/signin">login</a> in order to tweet from here.';
             }
